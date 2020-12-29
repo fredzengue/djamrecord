@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "mohd-akram.vscode-html-format",
+        "onecentlin.laravel-blade",
+        "onecentlin.laravel5-snippets",
+        "abusaidm.html-snippets",
+        "mikestead.dotenv",
+        "editorconfig.editorconfig",
+        "ryannaddy.laravel-artisan",
+        "onecentlin.laravel-extension-pack",
+        "pkief.material-icon-theme"
+    ]
+}
