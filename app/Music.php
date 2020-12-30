@@ -19,4 +19,3 @@ class Music extends Model
         return $this->belongsTo('App\Album');
     }
 }
-}
