@@ -56,9 +56,9 @@
                 <div class="col-lg-6">
                 <div class="single_player_container">
                 <div class="single_player">
-                <div class="jp-jplayer jplayer" data-ancestor=".jp_container_1" data-url="{{ asset('storage/' . $music->link)}}" id="jp_jplayer_0" style="width: 0px; height: 0px;">
+                <div class="jp-jplayer jplayer" data-ancestor=".jp_container_1" data-url="{{ asset('storage/' . $music->url)}}" id="jp_jplayer_0" style="width: 0px; height: 0px;">
                     <img id="jp_poster_0" style="width: 0px; height: 0px; display: none;">
-                    <audio id="jp_audio_0" preload="metadata" src="{{ asset('storage/' . $music->link)}}" __idm_id__="118136833"></audio>
+                    <audio id="jp_audio_0" preload="metadata" src="{{ asset('storage/' . $music->url)}}" __idm_id__="118136833"></audio>
                 </div>
                 <div class="jp-audio jp_container_1" role="application" aria-label="media player">
                 <div class="jp-gui jp-interface">

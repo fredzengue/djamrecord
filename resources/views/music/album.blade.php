@@ -9,7 +9,7 @@
         </div>
         <div class="container">
             <div class="category-links">
-                <a href="/genre">Piste</a>
+                <a href="/piste">Piste</a>
                 <a href="/artiste">Artiste</a>
                 <a href="/playlist" class="active">Album</a>
             </div>
