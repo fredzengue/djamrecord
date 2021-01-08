@@ -21,7 +21,7 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $title = "Music";
+        $title = "Piste";
         $news = Music::with('gender','artist')->orderBy('release_date')->take(3)->get();
         $musics = Music::with('gender','artist')->paginate(15);
         return view('music.index')->with([
