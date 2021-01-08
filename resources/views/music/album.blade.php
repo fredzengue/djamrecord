@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-title mb-0 pb-4">
-                    <h2>Besoin d'aide pour chercher une album? </h2>
+                    <h2>Besoin d'aide pour chercher un album? </h2>
                 </div>
                 <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
             </div>
