@@ -92,7 +92,7 @@
                 <div class="col-lg-2">
                 <div class="songs-links">
                 <a href=""><img src="https://preview.colorlib.com/theme/solmusic/img/icons/p-1.png" alt=""></a>
-                <a href="{{ asset('storage/' . $music->poster)}}" download><img src="https://preview.colorlib.com/theme/solmusic/img/icons/p-2.png" alt=""></a>
+                <a href="{{ asset('storage/' . $music->url)}}" download><img src="https://preview.colorlib.com/theme/solmusic/img/icons/p-2.png" alt=""></a>
                 <a href=""><img src="https://preview.colorlib.com/theme/solmusic/img/icons/p-3.png" alt=""></a>
                 </div>
                 </div>
