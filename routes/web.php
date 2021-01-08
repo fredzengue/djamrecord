@@ -21,8 +21,8 @@ Route::get('/', function () {
 Route::get('/piste', 'MusicController@index');
 Route::get('/artiste', 'MusicController@artist');
 Route::get('/album', 'MusicController@album');
-Route::get('/photo', 'photoController@index');
-Route::get('/video', 'videoController@index');
+Route::get('/photo', 'PhotoController@index');
+Route::get('/video', 'VideoController@index');
 Route::get('/blog', 'BlogController@index');
 Route::get('/contact', 'ContactController@index');
 
