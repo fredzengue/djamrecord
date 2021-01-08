@@ -14,7 +14,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = video::all();
+        $videos = Video::all();
         return view('video')->with('videos',$videos);
     }
 
