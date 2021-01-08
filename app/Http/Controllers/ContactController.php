@@ -13,7 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        $title = "Contact";
+        return view('contact')->with('title',$title);
     }
 
     /**

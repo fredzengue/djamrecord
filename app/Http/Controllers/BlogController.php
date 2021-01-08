@@ -13,7 +13,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blog');
+        $title = "Blog";
+        return view('blog')->with('title',$title);
     }
 
     /**

@@ -21,30 +21,36 @@ class MusicController extends Controller
      */
     public function index()
     {
+        $title = "Music";
         $news = Music::with('gender','artist')->orderBy('release_date')->take(3)->get();
         $musics = Music::with('gender','artist')->paginate(15);
         return view('music.index')->with([
             'news' => $news,
-            'musics' => $musics
+            'musics' => $musics,
+            'title' => $title
         ]);
     }
     public function artist()
     {
+        $title = "Artist";
         $news = Music::with('gender','artist')->orderBy('release_date')->take(3)->get();
         $artists = Artist::with('albums')->paginate(15);
         return view('music.artist')->with([
             'news' => $news,
-            'artists' => $artists
+            'artists' => $artists,
+            'title' => $title
         ]);
     }
 
     public function album()
     {
+        $title = "Album";
         $news = Music::with('gender','artist')->orderBy('release_date')->take(3)->get();
         $albums = Album::with('pistes')->paginate(15);
         return view('music.album')->with([
             'news' => $news,
-            'albums' => $albums
+            'albums' => $albums,
+            'title' => $title
         ]);
     }
 

@@ -14,8 +14,12 @@ class PhotoController extends Controller
      */
     public function index()
     {
+        $title = "Photo";
         $photos = Photo::all();
-        return view('photo')->with('photos',$photos);
+        return view('photo')->with([
+            'photos' => $photos,
+            'title' => $title
+            ]);
     }
 
     /**
