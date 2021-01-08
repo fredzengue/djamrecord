@@ -4,6 +4,10 @@ use App\Album;
 use App\Gender;
 use App\Music;
 
+function title($title)
+{
+    return $title;
+}
 
 function  nbreAlbum($id)
 {
@@ -15,8 +19,4 @@ function  nbrePiste($id)
 {
     return Music::where('album_id', '=',$id)->count();
 
-}
-function title($title)
-{
-    return $title;
 }

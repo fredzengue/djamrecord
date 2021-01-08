@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-<title></title>
+<title>{{title($title)}}</title>
 <meta charset="UTF-8">
 <meta name="description" content="SolMusic HTML Template">
 <meta name="keywords" content="music, html">
