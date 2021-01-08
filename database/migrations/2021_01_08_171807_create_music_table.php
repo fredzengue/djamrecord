@@ -17,6 +17,7 @@ class CreateMusicTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('poster');
+            $table->string('url');
             $table->date('release_date');
             $table->unsignedBigInteger('gender_id');
             $table->unsignedBigInteger('artist_id');
