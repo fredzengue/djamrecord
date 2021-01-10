@@ -25,7 +25,7 @@
                             <p>{{$new->artist->name}}</p>
                             <p>Date de sortie: {{ $new->release_date}}</p>
                         </div>
-                        <a href="artist.html" class="ci-link"><i class="fa fa-play"></i></a>
+                        <a href="{{route('piste.play', $new->id)}}" class="ci-link"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
                 @endforeach
@@ -40,7 +40,7 @@
             <h2>Music</h2>
             <hr>
         </div>
-        @foreach ($musics as $music)
+        @foreach ($musics as $i => $music)
         <div class="song-item">
             <div class="row">
                 <div class="col-lg-4">
@@ -54,40 +54,40 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                <div class="single_player_container">
-                <div class="single_player">
-                <div class="jp-jplayer jplayer" data-ancestor=".jp_container_1" data-url="{{ asset('storage/' . $music->url)}}" id="jp_jplayer_0" style="width: 0px; height: 0px;">
-                    <img id="jp_poster_0" style="width: 0px; height: 0px; display: none;">
-                    <audio id="jp_audio_0" preload="metadata" src="{{ asset('storage/' . $music->url)}}" __idm_id__="118136833"></audio>
-                </div>
-                <div class="jp-audio jp_container_1" role="application" aria-label="media player">
-                <div class="jp-gui jp-interface">
+                    <div class="single_player_container">
+                        <div class="single_player">
+                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container_{{$i+1}}" data-url="{{ asset('storage/' . $music->url)}}" id="jp_jplayer_{{$i}}" style="width: 0px; height: 0px;">
+                                <img id="jp_poster_{{$i}}" style="width: 0px; height: 0px; display: none;">
+                                <audio id="jp_audio_{{$i}}" preload="metadata" src="{{ asset('storage/' . $music->url)}}" __idm_id__="118136833"></audio>
+                            </div>
+                            <div class="jp-audio jp_container_{{$i+1}}" role="application" aria-label="media player">
+                                <div class="jp-gui jp-interface">
 
-                <div class="player_controls_box">
-                <button class="jp-prev player_button" tabindex="0"></button>
-                <button class="jp-play player_button" tabindex="0"></button>
-                <button class="jp-next player_button" tabindex="0"></button>
-                <button class="jp-stop player_button" tabindex="0"></button>
-                </div>
+                                    <div class="player_controls_box">
+                                        <button class="jp-prev player_button" tabindex="0"></button>
+                                        <button class="jp-play player_button" tabindex="0"></button>
+                                        <button class="jp-next player_button" tabindex="0"></button>
+                                        <button class="jp-stop player_button" tabindex="0"></button>
+                                    </div>
 
-                <div class="player_bars">
-                <div class="jp-progress">
-                <div class="jp-seek-bar" style="width: 100%;">
-                <div>
-                <div class="jp-play-bar" style="width: 0%;"><div class="jp-current-time" role="timer" aria-label="time">00:00</div></div>
-                </div>
-                </div>
-                </div>
-                <div class="jp-duration ml-auto" role="timer" aria-label="duration">01:30</div>
-                </div>
-                </div>
-                <div class="jp-no-solution" style="display: none;">
-                <span>Update Required</span>
-                To play the media you will need to either update your browser to a recent version or update your <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
-                </div>
-                </div>
-                </div>
-                </div>
+                                    <div class="player_bars">
+                                        <div class="jp-progress">
+                                            <div class="jp-seek-bar" style="width: 100%;">
+                                                <div>
+                                                    <div class="jp-play-bar" style="width: 0%;"><div class="jp-current-time" role="timer" aria-label="time">00:00</div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jp-duration ml-auto" role="timer" aria-label="duration">01:30</div>
+                                    </div>
+                                </div>
+                                <div class="jp-no-solution" style="display: none;">
+                                <span>Update Required</span>
+                                To play the media you will need to either update your browser to a recent version or update your <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-2">
                 <div class="songs-links">
@@ -108,15 +108,14 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="section-title mb-0 pb-4">
-                            <h2>Besoin d'aide pour chercher une piste? </h2>
+                            <h2>Besoin d'aide pour chercher un song? </h2>
                         </div>
-                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
                     </div>
                     <div class="col-lg-6">
                         <div class="d-flex h-100 align-items-end">
-                            <form class="search-form">
-                                <input type="text" placeholder="piste">
-                                <button>Search</button>
+                            <form class="search-form" action="{{ route('piste.search') }}">
+                                <input type="text" name="piste" value="{{ request()->piste ?? ''}}"  placeholder="Tapez votre recherche ici">
+                                <button type="submit">Rechercher</button>
                             </form>
                         </div>
                     </div>

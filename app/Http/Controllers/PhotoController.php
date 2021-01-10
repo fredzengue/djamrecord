@@ -16,7 +16,7 @@ class PhotoController extends Controller
     {
         $title = "Photo";
         $photos = Photo::all();
-        return view('photo')->with([
+        return view('photo.index')->with([
             'photos' => $photos,
             'title' => $title
             ]);
@@ -27,9 +27,19 @@ class PhotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search()
     {
-        //
+        $title = "Photo";
+        request()->validate([
+            'photo' => 'required|min:3'
+        ]);
+        $request = request()->input('photo');
+        $photos = Photo::where('title', 'like', "%$request%")
+                ->paginate(30);
+        return view('photo.search')->with([
+            'photos' =>  $photos,
+            'title' => $title
+            ]);
     }
 
     /**

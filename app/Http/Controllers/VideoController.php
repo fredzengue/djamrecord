@@ -16,20 +16,40 @@ class VideoController extends Controller
     {
         $title = "Video";
         $videos = Video::all();
-        return view('video')->with([
+        return view('video.index')->with([
             'videos' => $videos,
             'title' => $title
             ]);
     }
-
+    public function play($id)
+    {
+        $title = 'video';
+        $video = Video::find($id);
+        $videos = Video::all();
+        return view('video.player')->with([
+            'title' => $title,
+            'video' => $video,
+            'videos' => $videos
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search()
     {
-        //
+        $title = "video";
+        request()->validate([
+            'video' => 'required|min:3'
+        ]);
+        $request = request()->input('video');
+        $videos = Video::where('title', 'like', "%$request%")
+                ->paginate(30);
+        return view('video.search')->with([
+            'videos' =>  $videos,
+            'title' => $title
+            ]);
     }
 
     /**

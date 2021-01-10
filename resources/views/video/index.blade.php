@@ -17,7 +17,7 @@
                         <p>{!! $video->description !!}</p>
                         <p>{{$video->release_date}}</p>
                     </div>
-                    <a href="artist.html" class="ci-link"><i class="fa fa-play"></i></a>
+                    <a href="{{route('video.play', $video->id)}}" class="ci-link"><i class="fa fa-play"></i></a>
                 </div>
             </div>
             @endforeach
@@ -29,15 +29,14 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-title mb-0 pb-4">
-                    <h2>Besoin d'aide pour chercher une vidéo? </h2>
+                    <h2>Besoin d'aide pour chercher une video ? </h2>
                 </div>
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
             </div>
             <div class="col-lg-6">
                 <div class="d-flex h-100 align-items-end">
-                    <form class="search-form">
-                        <input type="text" placeholder="Titre">
-                        <button>Search</button>
+                    <form class="search-form" action="{{ route('video.search') }}">
+                        <input type="text" name="video" value="{{ request()->video ?? ''}}"  placeholder="Tapez votre recherche ici">
+                        <button type="submit">Rechercher</button>
                     </form>
                 </div>
             </div>
